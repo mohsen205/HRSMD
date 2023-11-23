@@ -21,7 +21,7 @@ if(isset($_POST['patsub'])){
 	}
   else {
     echo("<script>alert('Invalid Username or Password. Try Again!');
-          window.location.href = 'index1.php';</script>");
+          window.location.href = 'patient-login.php';</script>");
     // header("Location:error.php");
   }
 		
@@ -65,7 +65,7 @@ if(isset($_POST['doc_sub']))
 }
 function display_admin_panel(){
 	echo '<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

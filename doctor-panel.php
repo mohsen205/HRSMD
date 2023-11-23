@@ -33,7 +33,7 @@ if(isset($_GET['cancel']))
 
 
 ?>
-<html lang="en">
+<html lang="fr">
   <head>
 
 

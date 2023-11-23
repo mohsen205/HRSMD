@@ -7,7 +7,7 @@ if(isset($_POST['search_submit'])){
  $query="select * from appointmenttb where contact='$contact' and doctor='$docname';";
  $result=mysqli_query($con,$query);
  echo '<!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">

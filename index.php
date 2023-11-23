@@ -1,18 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 
 <head>
-    <title>HMS</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <title>HRSMD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logo.jpg" />
     <link rel="stylesheet" type="text/css" href="style1.css">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> -->
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
     <style>
     .form-control {
         border-radius: 0.75rem;
@@ -84,8 +82,6 @@
         </div>
     </nav>
 
-
-
     <div class="container register" style="font-family: 'IBM Plex Sans', sans-serif;">
         <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 40%;">
             <li class="nav-item">
@@ -131,29 +127,33 @@
                                         <span>Femme </span>
                                     </label>
                                 </div>
-                                <a href="index1.php">Déjà un compte ?</a>
+                                <a href="patient-login.php">Déjà un compte ?</a>
                             </div>
                         </div>
 
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Last Name *" name="lname"
+                                <input type="text" class="form-control" placeholder="Nom de famille *" name="lname"
                                     onkeydown="return alphaOnly(event);" required />
                             </div>
 
                             <div class="form-group">
                                 <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control"
-                                    placeholder="Your Phone *" />
+                                    placeholder="Votre numéro de téléphone *" />
                             </div>
+
                             <div class="form-group">
                                 <input type="password" class="form-control" id="cpassword"
-                                    placeholder="Confirm Password *" name="cpassword" onkeyup='check();'
+                                    placeholder="Confirmer le mot de passe *" name="cpassword" onkeyup='check();'
                                     required /><span id='message'></span>
                             </div>
-                            <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();"
-                                value="Register" />
+
+                            <button type="submit" class="btnRegister" name="patsub1" onclick="return checklen();">
+                                S'inscrire
+                            </button>
                         </div>
+
 
                     </div>
                 </form>

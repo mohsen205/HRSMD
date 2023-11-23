@@ -1,5 +1,8 @@
 <html>
+
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+    <title>HRSMD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/images/logo.jpg" />
 </head>
+
 </html>

@@ -46,7 +46,7 @@ if(isset($_POST['prescribe']) && isset($_POST['pid']) && isset($_POST['ID']) && 
 
 ?>
 
-<html lang="en">
+<html lang="fr">
   <head>
 
 
