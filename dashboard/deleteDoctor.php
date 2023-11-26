@@ -1,25 +1,35 @@
 <?php
-    // Include the database connection file
-    require_once("../config/db.php");
-    require_once("../utils/message.php");
+// Include the database connection file
+require_once("../config/db.php");
+require_once("../utils/message.php");
 
-    // Check if doctor_id is present in the POST data
-    if (isset($_GET['id'])) {
-        // Retrieve and sanitize the doctor_id
-        $doctorId = $_GET['id'];
-        
-        // Prepare and execute the delete query
-        $stmt = $pdo->prepare("DELETE FROM doctb WHERE id = ?");
+// Check if doctor_id is present in the GET data
+if (isset($_GET['id'])) {
+    // Retrieve and sanitize the doctor_id
+    $doctorId = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+
+    // Prepare and execute the delete query
+    $stmt = $pdo->prepare("DELETE FROM doctb WHERE id = ?");
+    
+    try {
+        $pdo->beginTransaction();
+
         if ($stmt->execute([$doctorId])) {
-            // Success: Redirect with success message
+            // Success: Commit the transaction and redirect with success message
+            $pdo->commit();
             redirectWithMessage("../dashboard/doctorsList.php", "Le médecin a été supprimé avec succès.");
         } else {
-            // Error: Redirect with error message
+            // Error: Rollback the transaction and redirect with error message
+            $pdo->rollBack();
             redirectWithMessage("../dashboard/doctorsList.php", "Erreur lors de la suppression du médecin. Veuillez réessayer.");
         }
-    } else {
-        // Redirect with an error message if doctor_id is not provided
-        redirectWithMessage("../dashboard/doctorsList.php", "ID du médecin non spécifié pour la suppression.");
+    } catch (PDOException $e) {
+        // Handle any exceptions and redirect with an error message
+        $pdo->rollBack();
+        redirectWithMessage("../dashboard/doctorsList.php", "Erreur de base de données lors de la suppression du médecin. Veuillez réessayer.");
     }
-
+} else {
+    // Redirect with an error message if doctor_id is not provided
+    redirectWithMessage("../dashboard/doctorsList.php", "ID du médecin non spécifié pour la suppression.");
+}
 ?>

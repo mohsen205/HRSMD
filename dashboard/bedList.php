@@ -72,7 +72,7 @@ require_once("../includes/header.php");
                             <tr>
                                 <td><?php echo $bed['roomNumber']; ?></td>
                                 <td><?php echo $bed['description']; ?></td>
-                                <td><?php echo $bed['status']; ?></td>
+                                <td><?php echo ($bed['status'] === 'occupied') ? 'Occupé' : 'Disponible'; ?></td>
                                 <td><?php echo date('d-m-Y H:i:s', strtotime($bed['createdAt'])); ?></td>
                                 <td>
                                     <a href="./editBed.php?id=<?php echo $bed['id']; ?>" class="text-primary">

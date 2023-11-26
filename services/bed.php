@@ -24,14 +24,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     } elseif (isset($_POST["update"])) {
         // Retrieve form data
-        $roomNumber = filter_var($_POST["roomNumber"], FILTER_SANITIZE_STRING);
         $description = filter_var($_POST["description"], FILTER_SANITIZE_STRING);
         $status = filter_var($_POST["status"], FILTER_SANITIZE_STRING);
 
         // Check if roomNumber is present to determine if it's an update or insert
         $bedId = filter_var($_POST['bed_id'], FILTER_SANITIZE_STRING);
 
-        $stmt = $pdo->prepare("UPDATE bedtb SET description=?, status=? WHERE roomNumber=?");
+        $stmt = $pdo->prepare("UPDATE bedtb SET description=?, status=? WHERE id=?");
 
         if ($stmt->execute([$description, $status, $bedId])) {
             // Success: Redirect with success message

@@ -34,12 +34,12 @@ require_once("../includes/header.php");
             </div>
             <div class="d-flex justify-content-center">
                 <?php
-        if (isset($_GET['message'])) {
-            $message = urldecode($_GET['message']);
-            echo '<div style="width:350px" class="alert alert-dismissible fade show alert-' . (strpos($message, 'succès') !== false ? 'success' : 'danger') . '" role="alert">' . $message . '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-             </div>';
-        }
-        ?>
+                if (isset($_GET['message'])) {
+                    $message = urldecode($_GET['message']);
+                    echo '<div style="width:350px" class="alert alert-dismissible fade show alert-' . (strpos($message, 'succès') !== false ? 'success' : 'danger') . '" role="alert">' . $message . '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>';
+                }
+                ?>
 
             </div>
 
@@ -88,7 +88,7 @@ require_once("../includes/header.php");
                             <option value="evening">Soir</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="update">Ajouter le médecin</button>
+                    <button type="submit" class="btn btn-primary" name="update">Sauvegarder le médecin</button>
                 </form>
             </div>
 

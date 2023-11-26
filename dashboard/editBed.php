@@ -53,8 +53,9 @@ require_once("../includes/header.php");
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea type="text" class="form-control" id="description" name="description"
-                            value="<?php echo $editBedData["description"] ?>" required></textarea>
+                        <textarea type="text" class="form-control" id="description" name="description" required>
+                            <?php echo $editBedData["description"] ?>
+                        </textarea>
                     </div>
                     <div class="mb-3">
                         <label for="status" class="form-label">Statut</label>

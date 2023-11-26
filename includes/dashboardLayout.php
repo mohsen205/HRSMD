@@ -75,8 +75,8 @@
                     <div class="collapse" id="collapseInjury" aria-labelledby="headingOne"
                         data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="../dashboard/PatientList.php">Liste de patients</a>
-                            <a class="nav-link" href="../dashboard/patientList.php">Ajouter un patient</a>
+                            <a class="nav-link" href="../dashboard/patientList.php">Liste de patients</a>
+                            <a class="nav-link" href="../dashboard/addPatient.php">Ajouter un patient</a>
                         </nav>
                     </div>
 
