@@ -57,6 +57,51 @@
                             <a class="nav-link" href="../dashboard/addDoctor.php">Ajouter un médecin</a>
                         </nav>
                     </div>
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseInjury"
+                        aria-expanded="false" aria-controls="collapseInjury">
+                        <div class="sb-nav-link-icon">
+                            <span class="material-symbols-outlined">
+                                personal_injury
+                            </span>
+                        </div>
+                        Patient
+                        <div class="sb-sidenav-collapse-arrow">
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                    </a>
+                    <div class="collapse" id="collapseInjury" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="../dashboard/PatientList.php">Liste de patients</a>
+                            <a class="nav-link" href="../dashboard/patientList.php">Ajouter un patient</a>
+                        </nav>
+                    </div>
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseBed"
+                        aria-expanded="false" aria-controls="collapseBed">
+                        <div class="sb-nav-link-icon">
+                            <span class="material-symbols-outlined">
+                                bed
+                            </span>
+                        </div>
+                        Lit
+                        <div class="sb-sidenav-collapse-arrow">
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                    </a>
+                    <div class="collapse" id="collapseBed" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="../dashboard/bedList.php">Liste de lits</a>
+                            <a class="nav-link" href="../dashboard/addBed.php">Ajouter un lit</a>
+                        </nav>
+                    </div>
+
                 </div>
             </div>
         </nav>
