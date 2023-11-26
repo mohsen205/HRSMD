@@ -36,8 +36,8 @@
                         </div>
                         Tableau de bord
                     </a>
-                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts"
-                        aria-expanded="false" aria-controls="collapseLayouts">
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseDoctors"
+                        aria-expanded="false" aria-controls="collapseDoctors">
                         <div class="sb-nav-link-icon">
                             <span class="material-symbols-outlined">
                                 clinical_notes
@@ -50,11 +50,11 @@
                             </span>
                         </div>
                     </a>
-                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
+                    <div class="collapse" id="collapseDoctors" aria-labelledby="headingOne"
                         data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
-                            <a class="nav-link" href="layout-static.html">Static Navigation</a>
-                            <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                            <a class="nav-link" href="../dashboard/doctorsList.php">Liste de médecins</a>
+                            <a class="nav-link" href="../dashboard/addDoctor.php">Ajouter un médecin</a>
                         </nav>
                     </div>
                 </div>
