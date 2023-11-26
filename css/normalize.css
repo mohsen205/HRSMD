@@ -18,3 +18,24 @@
 .btn {
   border-radius: 1.5rem;
 }
+
+/* navbar / sidebar */
+
+.bg-dark {
+  background: linear-gradient(to right, rgb(57, 49, 175), rgb(0, 198, 255));
+  color: white;
+}
+
+.sb-sidenav-dark {
+  background: rgb(57, 49, 175);
+  color: white;
+}
+.sb-sidenav-dark .sb-sidenav-menu .nav-link,
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon,
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+  color: white;
+}
+
+.navbar-dark {
+  --bs-navbar-color: white;
+}
