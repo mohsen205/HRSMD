@@ -1,0 +1,48 @@
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+.bg-primary {
+  background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+}
+
+.col-md-4 {
+  max-width: 20% !important;
+}
+
+.list-group-item.active {
+  z-index: 2;
+  color: #fff;
+  background-color: #342ac1;
+  border-color: #007bff;
+}
+
+.text-primary {
+  color: #342ac1 !important;
+}
+
+#cpass {
+  display: -webkit-box;
+}
+
+#list-app {
+  font-size: 15px;
+}
+
+.form-control {
+  border-radius: 0.75rem;
+}
+
+.btn-primary {
+  border-radius: 1.5rem;
+  background-color: #3c50c1;
+  border-color: #3c50c1;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#inputbtn:hover {
+  cursor: pointer;
+}
