@@ -1,0 +1,20 @@
+* {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-display: swap;
+}
+
+:root {
+  --bs-primary: rgb(57, 49, 175);
+}
+
+.form-control {
+  border-radius: 0.75rem;
+}
+
+.alert {
+  border-radius: 1rem;
+}
+
+.btn {
+  border-radius: 1.5rem;
+}

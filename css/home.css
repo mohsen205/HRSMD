@@ -1,0 +1,15 @@
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, rgb(57, 49, 175), rgb(0, 198, 255));
+}
+
+.register .register-form {
+  background-color: white;
+  min-width: 450px;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
