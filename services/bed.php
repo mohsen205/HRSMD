@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $description = filter_var($_POST["description"], FILTER_SANITIZE_STRING);
         $status = filter_var($_POST["status"], FILTER_SANITIZE_STRING);
 
-        // Check if roomNumber is present to determine if it's an update or insert
+        // Check if bedNumber is present to determine if it's an update or insert
         $bedId = filter_var($_POST['bed_id'], FILTER_SANITIZE_STRING);
 
         $stmt = $pdo->prepare("UPDATE bedtb SET description=?, status=? WHERE id=?");

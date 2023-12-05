@@ -153,7 +153,7 @@ require_once("../includes/header.php");
                                     <tbody>
                                         <?php foreach ($beds as $bed) { ?>
                                         <tr>
-                                            <td><?php echo $bed['roomNumber']; ?></td>
+                                            <td><?php echo $bed['bedNumber']; ?></td>
                                             <td><?php echo $bed['description']; ?></td>
                                             <td><?php echo ($bed['status'] === 'occupied') ? 'Occupé' : 'Disponible'; ?>
                                             </td>

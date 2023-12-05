@@ -13,7 +13,7 @@ $username = $_SESSION["username"];
 require_once("../config/db.php");
 
 // Fetch bed data from the database
-$bedQuery = "SELECT id, roomNumber, description, status FROM bedtb";
+$bedQuery = "SELECT id, bedNumber, roomName, status FROM bedtb";
 $bedStmt = $pdo->prepare($bedQuery);
 $bedStmt->execute();
 $beds = $bedStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -79,7 +79,7 @@ require_once("../includes/header.php");
                         <label for="bedId" class="form-label">Choisir un lit</label>
                         <select class="form-select" id="bedId" name="bedId" required>
                             <?php foreach ($beds as $bed) : ?>
-                            <option value="<?= $bed['id'] ?>"><?= $bed['roomNumber'] ?> - <?= $bed['description'] ?>
+                            <option value="<?= $bed['id'] ?>"><?= $bed['bedNumber'] ?> - <?= $bed['roomName'] ?>
                                 (<?= $bed['status'] ?>)</option>
                             <?php endforeach; ?>
                         </select>
@@ -127,7 +127,7 @@ require_once("../includes/header.php");
                     <button type="submit" class="btn btn-primary" name="add">Ajouter le patient</button>
                 </form>
             </div>
-                </main>
+        </main>
         <footer class="py-4 bg-light mt-auto">
             <div class="container-fluid px-4">
                 <div class="d-flex align-items-center justify-content-between small">

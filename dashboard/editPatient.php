@@ -28,7 +28,7 @@ if ($editPatientId) {
 }
 
 // Fetch bed data from the database
-$bedQuery = "SELECT id, roomNumber, description, status FROM bedtb";
+$bedQuery = "SELECT id, bedNumber, description, status FROM bedtb";
 $bedStmt = $pdo->prepare($bedQuery);
 $bedStmt->execute();
 $beds = $bedStmt->fetchAll(PDO::FETCH_ASSOC);
@@ -108,7 +108,7 @@ require_once("../includes/header.php");
                             <?php foreach ($beds as $bed) : ?>
                             <option value="<?= $bed['id'] ?>"
                                 <?php echo (isset($editPatientData['bedId']) && $editPatientData['bedId'] == $bed['id']) ? 'selected' : ''; ?>>
-                                <?= $bed['roomNumber'] ?> - <?= $bed['description'] ?> (<?= $bed['status'] ?>)</option>
+                                <?= $bed['bedNumber'] ?> - <?= $bed['description'] ?> (<?= $bed['status'] ?>)</option>
                             <?php endforeach; ?>
                         </select>
                     </div>
