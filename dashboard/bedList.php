@@ -57,7 +57,8 @@ require_once("../includes/header.php");
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th scope="col">Numéro de chambre</th>
+                                <th scope="col">Nom de la chambre</th>
+                                <th scope="col">Numéro de lit</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Statut</th>
                                 <th scope="col">Date de création</th>
@@ -70,7 +71,8 @@ require_once("../includes/header.php");
                                 foreach ($beds as $bed) {
                                 ?>
                             <tr>
-                                <td><?php echo $bed['roomNumber']; ?></td>
+                                <td><?php echo $bed['roomName']; ?></td>
+                                <td><?php echo $bed['bedNumber']; ?></td>
                                 <td><?php echo $bed['description']; ?></td>
                                 <td><?php echo ($bed['status'] === 'occupied') ? 'Occupé' : 'Disponible'; ?></td>
                                 <td><?php echo date('d-m-Y H:i:s', strtotime($bed['createdAt'])); ?></td>
@@ -90,6 +92,15 @@ require_once("../includes/header.php");
                 <?php } ?>
             </div>
         </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted text-center">2023 © Hôpital Sadok M'kaddem. Tous droits réservés. &copy; Site
+                        conçu et
+                        réalisé par Kohila Ameni</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <?php require_once("../includes/footer.php") ?>

@@ -6,21 +6,23 @@ require_once("../utils/message.php");
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if (isset($_POST["add"])) {
-        // Retrieve form data
-        $roomNumber = filter_var($_POST["roomNumber"], FILTER_SANITIZE_STRING);
-        $description = filter_var($_POST["description"], FILTER_SANITIZE_STRING);
-        $status = filter_var($_POST["status"], FILTER_SANITIZE_STRING);
+            // Retrieve form data
+            $roomName = filter_var($_POST["roomName"], FILTER_SANITIZE_STRING);
+            $bedNumber = filter_var($_POST["bedNumber"], FILTER_SANITIZE_STRING);
+            $description = filter_var($_POST["description"], FILTER_SANITIZE_STRING);
+            $status = filter_var($_POST["status"], FILTER_SANITIZE_STRING);
 
-        // Insert data into the database
-        $stmt = $pdo->prepare("INSERT INTO bedtb (roomNumber, description, status) VALUES (?, ?, ?)");
+            // Insert data into the database
+            $stmt = $pdo->prepare("INSERT INTO bedtb (roomName, bedNumber, description, status) VALUES (?, ?, ?, ?)");
 
-        if ($stmt->execute([$roomNumber, $description, $status])) {
-            // Success: Redirect with success message
-            redirectWithMessage("../dashboard/addBed.php", "Le lit a été ajouté avec succès.");
-        } else {
-            // Error: Redirect with error message
-            redirectWithMessage("../dashboard/addBed.php", "Erreur lors de l'ajout du lit. Veuillez réessayer.");
-        }
+            if ($stmt->execute([$roomName, $bedNumber, $description, $status])) {
+                // Success: Redirect with success message
+                redirectWithMessage("../dashboard/addBed.php", "Le lit a été ajouté avec succès.");
+            } else {
+                // Error: Redirect with error message
+                redirectWithMessage("../dashboard/addBed.php", "Erreur lors de l'ajout du lit. Veuillez réessayer.");
+            }
+
 
     } elseif (isset($_POST["update"])) {
         // Retrieve form data

@@ -36,8 +36,12 @@ require_once("../includes/header.php");
             <div class="pe-5 ps-5 pb-2 pt-2 ">
                 <form action="../services/bed.php" method="post">
                     <div class="mb-3">
-                        <label for="roomNumber" class="form-label">Numéro de chambre</label>
-                        <input type="text" class="form-control" id="roomNumber" name="roomNumber" required>
+                        <label for="roomName" class="form-label">Nom de la chambre</label>
+                        <input type="text" class="form-control" id="roomName" name="roomName" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="bedNumber" class="form-label">Numéro de lit</label>
+                        <input type="text" class="form-control" id="bedNumber" name="bedNumber" required>
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
@@ -56,6 +60,24 @@ require_once("../includes/header.php");
                 </form>
             </div>
         </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted text-center">2023 © Hôpital Sadok M'kaddem. Tous droits réservés. &copy; Site
+                        conçu et
+                        réalisé par Kohila Ameni</div>
+                </div>
+            </div>
+        </footer>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted text-center">2023 © Hôpital Sadok M'kaddem. Tous droits réservés. &copy; Site
+                        conçu et
+                        réalisé par Kohila Ameni</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <?php require_once("../includes/footer.php") ?>

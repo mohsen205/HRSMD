@@ -172,7 +172,16 @@ require_once("../includes/header.php");
                     <button type="submit" class="btn btn-primary" name="update">Modifier le patient</button>
                 </form>
             </div>
-        </main>
+                </main>
+        <footer class="py-4 bg-light mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted text-center">2023 © Hôpital Sadok M'kaddem. Tous droits réservés. &copy; Site
+                        conçu et
+                        réalisé par Kohila Ameni</div>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 <?php require_once("../includes/footer.php") ?>
