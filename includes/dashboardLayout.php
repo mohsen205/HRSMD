@@ -104,6 +104,33 @@
                             <a class="nav-link" href="../dashboard/addBed.php">Ajouter un lit</a>
                         </nav>
                     </div>
+
+
+                    <!--  -->
+                    <?php if($_SESSION["role"] === "super_admin") { ?>
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseAdmin"
+                        aria-expanded="false" aria-controls="collapseAdmin">
+                        <div class="sb-nav-link-icon">
+                            <span class="material-symbols-outlined">
+                                admin_panel_settings
+                            </span>
+                        </div>
+                        administrateur
+                        <div class="sb-sidenav-collapse-arrow">
+                            <span class="material-symbols-outlined">
+                                expand_more
+                            </span>
+                        </div>
+                    </a>
+                    <div class="collapse" id="collapseAdmin" aria-labelledby="headingOne"
+                        data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="../dashboard/AdminList.php">List des administrateurs</a>
+                            <a class="nav-link" href="../dashboard/addAdmin.php">Ajouter un administrateur</a>
+                        </nav>
+                    </div>
+                    <!--  -->
+                    <?php } ?>
                 </div>
             </div>
         </nav>

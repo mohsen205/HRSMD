@@ -7,15 +7,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = filter_var($_POST["username"], FILTER_SANITIZE_STRING);
     $password = filter_var($_POST["password"], FILTER_SANITIZE_STRING);
 
-
     // Check if the admin exists in the database
-    $stmt = $pdo->prepare("SELECT id, username, password FROM admintb WHERE username = :username");
+    $stmt = $pdo->prepare("SELECT id, username, password, role, status FROM admintb WHERE username = :username");
     $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     $stmt->execute();
     $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    
     if ($admin) {
+        // Check the status of the admin
+        if ($admin['status'] === "pending") {
+            header("Location: ../index.php?error=Vous n'avez pas la permission de vous connecter.");
+            exit();
+        }
+
         // Admin exists, verify the entered password
         if (verifyPassword($password, $admin['password'])) {
             // Password is correct
@@ -25,11 +29,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_start();
             $_SESSION["admin_id"] = $admin['id'];
             $_SESSION["username"] = $admin['username'];
+            $_SESSION["role"] = $admin['role'];
 
-            // Redirect to the home page or dashboard
-            header("Location: ../dashboard/index.php");
+            // Redirect to the home page or dashboard based on role
+            if ($admin['role'] === 'admin') {
+                header("Location: ../dashboard/index.php");
+            } else {
+                header("Location: ../dashboard/index.php");
+            }
             exit();
-        }   else {
+        } else {
             // Password is incorrect
             header("Location: ../index.php?error=Mot de passe incorrect");
             exit();
